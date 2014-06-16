@@ -1,0 +1,35 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+<meta charset="UTF-8" />
+<title>Kata Step 1: Create a String calculator with a method int
+	Add(string numbers)</title>
+</head>
+<body>
+
+	<h1>Create a String calculator with a method int Add(string
+		numbers)</h1>
+	<ol start="a" type="a">
+		<li>The method can take 0, 1, or 2 numbers and will return their
+			sum.</li>
+		<li>An empty string will return 0.</li>
+		<li>Example inputs: “”, “1”, or “1,2”</li>
+		<li>Start with the simplest test case of an empty string. Then 1
+			number. Then 2 numbers.</li>
+		<li>Remember to solve things as simply as possible, forcing
+			yourself to write tests for things you didn’t think about.</li>
+		<li>Remember to refactor after each passing test.</li>
+	</ol>
+	<br />
+	<br />
+
+	<h3>Examples</h3>
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When empty numbers "<span
+				concordion:set="#numbers"></span>" are passed on it<br /> Then the
+			method returns <span concordion:assertEquals="add(#numbers)">0</span><br />
+		</p>
+	</div>
+
+</body>
+</html>
