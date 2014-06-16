@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 public class CalculatorParametersTest {
 
     public int add(String numbers) {
-        return 0;
+        return numbers.length()>0?1:0; 
     }
 
 }
