@@ -6,8 +6,19 @@ import org.junit.runner.RunWith;
 @RunWith(ConcordionRunner.class)
 public class CalculatorParametersTest {
 
-    public int add(String numbers) {
-        return numbers.length()>0?1:0; 
-    }
+	public int add(String numbers) {
+		if(numbers.length()==0)
+			return 0;
+		
+		String[] numbersArray = numbers.split(",");
+		
+		if(numbersArray.length==1)
+			return Integer.parseInt(numbers);
+		
+		int first = Integer.parseInt(numbersArray[0]);
+		int second = Integer.parseInt(numbersArray[1]);
+		return first + second;
+	}
+
 
 }
