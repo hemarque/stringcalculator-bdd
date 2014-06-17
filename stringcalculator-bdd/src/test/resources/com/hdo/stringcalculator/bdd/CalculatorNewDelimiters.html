@@ -1,0 +1,39 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+<meta charset="UTF-8" />
+<title>Kata Step 4: Support different delimiters</title>
+</head>
+<body>
+
+	<h1>Support different delimiters.</h1>
+
+	<ul>
+		<li>to change a delimiter, the beginning of the string will
+			contain a separate line that looks like this:
+			“//[delimiter]\n[numbers…]” for example “//;\n1;2” should return
+			three where the default delimiter is ‘;’ .</li>
+		<li>the first line is optional. all existing scenarios should
+			still be supported</li>
+	</ul>
+
+	<br />
+	<br />
+
+	<h3>Examples</h3>
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains
+			a new delimiter like "<span concordion:set="#numbers">//;\n1;2</span>"<br />
+			Then the method returns <span concordion:assertEquals="add(#numbers)">3</span><br />
+		</p>
+	</div>
+	
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains
+			a new delimiter like "<span concordion:set="#numbers">//a\n1a2a3</span>"<br />
+			Then the method returns <span concordion:assertEquals="add(#numbers)">6</span><br />
+		</p>
+	</div>
+</body>
+</html>
