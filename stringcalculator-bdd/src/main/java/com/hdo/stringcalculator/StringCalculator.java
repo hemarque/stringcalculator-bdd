@@ -1,5 +1,7 @@
 package com.hdo.stringcalculator;
 
+import com.hdo.stringcalculator.exceptions.NegativesNotAllowedException;
+
 public class StringCalculator {
 
 	public int add(String numbers) {
@@ -23,11 +25,19 @@ public class StringCalculator {
 	}
 
 	private int add(String[] numbersArray) {
+		String negatives = "";
 		int result = 0;
+		int current = 0;
 		for (String number : numbersArray) {
-			if (!number.isEmpty())
-				result += Integer.parseInt(number);
+			if (!number.isEmpty()) {
+				current = Integer.parseInt(number);
+				result += current;
+			}
+			if (current < 0)
+				negatives = negatives + current + " ";
 		}
+		if (!negatives.isEmpty())
+			throw new NegativesNotAllowedException(negatives.trim());
 		return result;
 	}
 
