@@ -8,11 +8,6 @@ import com.hdo.stringcalculator.StringCalculator;
 @RunWith(ConcordionRunner.class)
 public class CalculatorNegativesNotAllowedTest {
 
-	public int add(String numbers) {
-		StringCalculator calculator = new StringCalculator();
-		return calculator.add(numbers);
-	}
-
 	public String addWithException(String numbers) {
 		try {
 			StringCalculator calculator = new StringCalculator();

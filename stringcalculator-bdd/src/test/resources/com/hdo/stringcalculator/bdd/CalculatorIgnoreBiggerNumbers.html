@@ -1,0 +1,32 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+<meta charset="UTF-8" />
+<title>Kata Step 6: Numbers bigger than 1000 should be ignored.</title>
+</head>
+<body>
+
+	<h1>Numbers bigger than 1000 should be ignored.</h1>
+
+	So adding 2 + 1001 = 2.
+	<br />
+	<br />
+
+	<h3>Examples</h3>
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains
+			a number bigger than 1000 like "<span concordion:set="#numbers">1\n1002</span>"<br />
+			Then the execution result is <span concordion:assertEquals="add(#numbers)">1</span><br />
+		</p>
+	</div>
+	
+		<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains
+			a number bigger than 1000 like "<span concordion:set="#numbers">3\n1000\n1006</span>"<br />
+			Then the execution result is <span concordion:assertEquals="add(#numbers)">1003</span><br />
+		</p>
+	</div>
+
+</body>
+</html>

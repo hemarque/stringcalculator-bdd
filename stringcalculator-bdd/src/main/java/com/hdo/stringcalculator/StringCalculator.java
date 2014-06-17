@@ -29,16 +29,32 @@ public class StringCalculator {
 		int result = 0;
 		int current = 0;
 		for (String number : numbersArray) {
-			if (!number.isEmpty()) {
-				current = Integer.parseInt(number);
-				result += current;
-			}
-			if (current < 0)
-				negatives = negatives + current + " ";
+			current = castToInt(number);
+			current = skipBigNumber(result, current);
+			negatives = nameTheNegative(negatives, current);
+			result += current;
 		}
+		reportNegativeNumbers(negatives);
+		return result;
+	}
+
+	private void reportNegativeNumbers(String negatives) {
 		if (!negatives.isEmpty())
 			throw new NegativesNotAllowedException(negatives.trim());
-		return result;
+	}
+
+	private String nameTheNegative(String negatives, int current) {
+		if (current < 0)
+			negatives = negatives + current + " ";
+		return negatives;
+	}
+
+	private int skipBigNumber(int result, int current) {
+		return current > 1000 ? 0 : current;
+	}
+
+	private int castToInt(String number) {
+		return !number.isEmpty() ? Integer.parseInt(number) : 0;
 	}
 
 }
