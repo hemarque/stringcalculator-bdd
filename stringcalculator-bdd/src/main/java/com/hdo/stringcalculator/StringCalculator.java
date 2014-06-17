@@ -16,12 +16,13 @@ public class StringCalculator {
 	}
 
 	private String getDelimiters(String numbers) {
-		return numbers.startsWith("//") ? calculateDelimiters(numbers)
+		return numbers.startsWith("//") ? extractDelimiters(numbers)
 				: "\\\\n|,";
 	}
 
-	private String calculateDelimiters(String numbers) {
-		return numbers.substring(2, numbers.indexOf("\\n"));
+	private String extractDelimiters(String numbers) {
+		return numbers.substring(2, numbers.indexOf("\\n")).replaceAll(
+				"\\]\\[", "|");
 	}
 
 	private int add(String[] numbersArray) {

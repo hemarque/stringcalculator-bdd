@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import com.hdo.stringcalculator.StringCalculator;
 
 @RunWith(ConcordionRunner.class)
-public class CalculatorManyDelimiters {
+public class CalculatorManyDelimitersTest {
 	public int add(String numbers) {
 		StringCalculator calculator = new StringCalculator();
 		return calculator.add(numbers);

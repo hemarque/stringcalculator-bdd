@@ -1,0 +1,31 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+<meta charset="UTF-8" />
+<title>Kata Step 9: Make sure you can also handle multiple delimiters with length longer than one char</title>
+</head>
+<body>
+
+	<h1>Make sure you can also handle multiple delimiters with length longer than one char</h1>
+
+	<br />
+	<br />
+
+	<h3>Examples</h3>
+	
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains
+			new delimiters like "<span concordion:set="#numbers">//[abc][def]\n1abc2def3</span>"<br />
+			Then the method returns <span concordion:assertEquals="add(#numbers)">6</span><br />
+		</p>
+	</div>
+	
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains
+			a new delimiter like "<span concordion:set="#numbers">//[***]\n1***2***3</span>"<br />
+			Then the method returns <span concordion:assertEquals="add(#numbers)">6</span><br />
+		</p>
+	</div>
+</body>
+</html>
