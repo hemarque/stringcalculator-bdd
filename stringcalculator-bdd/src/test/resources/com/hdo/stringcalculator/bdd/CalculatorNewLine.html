@@ -1,0 +1,38 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+<meta charset="UTF-8" />
+<title>Kata Step 3: Allow the Add method to handle new lines between numbers
+		(instead of commas).</title>
+</head>
+<body>
+
+	<h1>Allow the Add method to handle new lines between numbers
+		(instead of commas).</h1>
+	<ul>
+		<li>the following input is ok: “1\n2,3” (will equal 6)</li>
+		<li>the following input is NOT ok: “1,\n” (not need to prove it -
+			just clarifying)</li>
+	</ul>
+
+	<br />
+	<br />
+
+	<h3>Examples</h3>
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains a new line like
+			"<span concordion:set="#numbers">1\n2,3</span>"<br /> Then the method
+			returns <span concordion:assertEquals="add(#numbers)">6</span><br />
+		</p>
+	</div>
+
+	<div class="example">
+		<p>
+			Given an Add method on String Calculator<br /> When numbers contains a new line like
+			"<span concordion:set="#numbers">4\n5\n6</span>"<br /> Then the method
+			returns <span concordion:assertEquals="add(#numbers)">15</span><br />
+		</p>
+	</div>
+
+</body>
+</html>

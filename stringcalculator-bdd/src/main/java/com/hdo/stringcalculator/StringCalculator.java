@@ -1,9 +1,10 @@
 package com.hdo.stringcalculator;
 
+
 public class StringCalculator {
 
 	public int add(String numbers) {
-		return add(numbers.split(","));
+		return add(numbers.split("\\\\n|,"));
 	}
 
 	private int add(String[] numbersArray) {
